@@ -30,21 +30,23 @@ jobs:
           password: ${{ secrets.DOCKER_PASSWORD }}
 
       # Build and push Backend Docker image
-      - name: Build and push Backend Docker image
+      - name: Build and push Backend Docker image (Multi-Arch)
         uses: docker/build-push-action@v2
         with:
           context: ./backend
           file: ./backend/Dockerfile
           push: true
+          platforms: linux/amd64,linux/arm64
           tags: silvatkp/droidkey-backend:latest
 
-      # Build and push Frontend Docker image
-      - name: Build and push Frontend Docker image
+      # Build and push Frontend Docker image (Multi-Arch)
+      - name: Build and push Frontend Docker image (Multi-Arch)
         uses: docker/build-push-action@v2
         with:
           context: ./frontend
           file: ./frontend/Dockerfile
           push: true
+          platforms: linux/amd64,linux/arm64
           tags: silvatkp/droidkey-frontend:latest
 
       # Copy SSH key
@@ -60,11 +62,9 @@ jobs:
 
       # Deploy Application
       - name: Deploy Application
-        env:
-          DOCKER_HOST: "ssh://droidkeyuser@${{ secrets.SERVER_HOST }}"
         run: |
           ssh -o StrictHostKeyChecking=no droidkeyuser@${{ secrets.SERVER_HOST }} '
             cd /home/droidkeyuser &&
-            docker-compose pull &&
-            docker-compose up -d
+            sudo docker-compose pull &&
+            sudo docker-compose up -d
           '
