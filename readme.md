@@ -20,8 +20,8 @@ This project combines separate repositories for the backend and frontend:
 1. **Download the Repositories**:  
    Visit the following links to download the repositories as ZIP files:
 
-   - DroidKey Backend: <a href="https://anonymous.4open.science/api/repo/DroidKey-Backend-A51A/" target="_blank">https://anonymous.4open.science/api/repo/DroidKey-Backend-A51A/</a>
-   - DroidKey Frontend: <a href="https://anonymous.4open.science/api/repo/DroidKey-Frontend-A51A/" target="_blank">https://anonymous.4open.science/api/repo/DroidKey-Frontend-A51A/</a>
+   - DroidKey Backend: <a href="https://anonymous.4open.science/api/repo/DroidKey-Backend-A51A/zip" target="_blank">https://anonymous.4open.science/api/repo/DroidKey-Backend-A51A/zip</a>
+   - DroidKey Frontend: <a href="https://anonymous.4open.science/api/repo/DroidKey-Frontend-92C7/zip" target="_blank">https://anonymous.4open.science/api/repo/DroidKey-Frontend-92C7/zip</a>
 
 2. **Extract the ZIP Files**:  
    Extract both ZIP files into a single folder named `droidkey`. You should have two subfolders:
